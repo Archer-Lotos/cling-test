@@ -2,8 +2,8 @@
 
 #include "Compiler.h"
 #include "DeepClientCppWrapper.h"
-#include "cling/Interpreter/Interpreter.h"
-#include "cling/Interpreter/Value.h"
+#include <cling/Interpreter/Interpreter.h>
+#include <cling/Interpreter/Value.h>
 
 std::string Compiler::compileAndExecute(const std::string &code, DeepClientCppWrapper* deepClient) {
     cling::Interpreter interp(/*argc=*/0, /*argv=*/nullptr, /*input=*/nullptr, /*Errs=*/nullptr);
