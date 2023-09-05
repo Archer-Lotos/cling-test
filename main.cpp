@@ -6,9 +6,9 @@
 #include <cling/Interpreter/Value.h>
 
 std::string Compiler::compileAndExecute(const std::string &code, DeepClientCppWrapper* deepClient) {
-    cling::Interpreter interp(/*argc=*/0, /*argv=*/nullptr, /*input=*/nullptr, /*Errs=*/nullptr);
+    //cling::Interpreter interp(/*argc=*/0, /*argv=*/nullptr, /*input=*/nullptr, /*Errs=*/nullptr);
 
-    interp.declare(code);
+    /*interp.declare(code);
 
     cling::Value result;
     if (interp.process(result)) {
@@ -16,14 +16,18 @@ std::string Compiler::compileAndExecute(const std::string &code, DeepClientCppWr
         return resultStr;
     } else {
         return "Execution failed.";
-    }
+    }*/
+    return "Execution failed.";
 }
 
 
 int main() {
     std::cout << "Start!" << std::endl;
     DeepClientCppWrapper deepClient("jwt_token", "gql_urn");
-    std::string code = "";
+    std::string code = R"(
+    int result = deepClient->calculate();
+    std::cout << "Результат: " << result << std::endl;
+)";
     Compiler compiler;
     std::string result = compiler.compileAndExecute(code, &deepClient);
     std::cout << "Execution result: " << result << std::endl;

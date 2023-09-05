@@ -8,6 +8,8 @@
 
 class DeepClientCppWrapper {
 
+public:
+    DeepClientCppWrapper(const char string[10], const char string1[8]);
 };
 
 

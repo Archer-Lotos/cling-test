@@ -4,7 +4,7 @@ project(cling_test)
 set(CMAKE_CXX_STANDARD 17)
 
 include_directories(
-        cling_include/cling
+        cling_include
 )
 
 add_executable(cling_test main.cpp

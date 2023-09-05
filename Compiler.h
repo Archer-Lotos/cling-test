@@ -11,7 +11,8 @@
 
 class Compiler {
 
-    std::__cxx11::basic_string<char>
+public:
+    static std::__cxx11::basic_string<char>
     compileAndExecute(const std::__cxx11::basic_string<char> &code, DeepClientCppWrapper *deepClient);
 };
 

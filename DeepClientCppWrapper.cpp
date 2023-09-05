@@ -3,3 +3,7 @@
 //
 
 #include "DeepClientCppWrapper.h"
+
+DeepClientCppWrapper::DeepClientCppWrapper(const char *string, const char *string1) {
+
+}
