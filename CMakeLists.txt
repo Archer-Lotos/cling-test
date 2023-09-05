@@ -7,16 +7,15 @@ include_directories(
         cling_include
 )
 
+link_directories(
+        libraries
+)
+
 add_executable(cling_cpp main.cpp
         DeepClientCppWrapper.cpp
         Compiler.cpp
 #        cling_lib/Interpreter/Interpreter.cpp
 )
 
-add_library(libclangBasic STATIC IMPORTED)
-set_target_properties(libclangBasic PROPERTIES
-        IMPORTED_LOCATION "libraries/libclangBasic.a"
-        LINKER_LANGUAGE CXX
-)
 
-target_link_libraries(cling_cpp PRIVATE libclangBasic)
+target_link_libraries(cling_cpp PRIVATE libclangBasic.a)
