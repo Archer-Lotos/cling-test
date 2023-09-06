@@ -18,4 +18,4 @@ add_executable(cling_cpp main.cpp
 )
 
 
-target_link_libraries(cling_cpp PRIVATE libclangBasic.a)
+target_link_libraries(cling_cpp PRIVATE libcling.so)

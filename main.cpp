@@ -6,18 +6,19 @@
 #include <cling/Interpreter/Value.h>
 
 std::string Compiler::compileAndExecute(const std::string &code, DeepClientCppWrapper* deepClient) {
-    cling::Interpreter interp = cling::Interpreter(0, nullptr);
+    cling::Interpreter interp(/*argc=*/0, /*argv=*/nullptr, /*input=*/nullptr, /*Errs=*/{});
 
-    interp.declare(code);
+    //interp.declare(code);
 
-    const char *result;
-    if (interp.process(result)) {
-        std::string resultStr = result;
-        return resultStr;
+    /*std::string result;
+    interp.process(result);
+
+    if (result.empty()) {
+        std::cerr << "Ошибка выполнения кода." << std::endl;
     } else {
-        return "Execution failed.";
-    }
-    return "Execution failed.";
+        std::cout << "Результат: " << result << std::endl;
+    }*/
+    return "test";
 }
 
 
